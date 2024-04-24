@@ -47,7 +47,7 @@ export const Register = ({ setToken }) => {
 			<form
 				onSubmit={handleRegistration}
 				onChange={handleChange}
-				id="regiser-form"
+				id="register-form"
 			>
 				<input type="text" name="firstname" id="firstname" />
 				<input type="text" name="lastname" id="lastname" />
