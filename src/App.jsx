@@ -14,16 +14,19 @@ function App() {
 	return (
 		<>
 			<div className="cls-main-container">
-				<Navigations />
+				<Navigations token={token} />
+				<Routes>
+					<Route path="/" element={<Books token={token} />} />
+					<Route path="/books" element={<Books token={token} />} />
+					<Route path="/books/:bookId" element={<SingleBook token={token} />} />
+					<Route path="/register" element={<Register setToken={setToken} />} />
+					<Route path="/login" element={<Login setToken={setToken} />} />
+					<Route
+						path="/account"
+						element={<Account token={token} setToken={setToken} />}
+					/>
+				</Routes>
 			</div>
-			<Routes>
-				<Route path="/" element={<Books token={token} />} />
-				<Route path="/books" element={<Books token={token} />} />
-				<Route path="/books/:bookId" element={<SingleBook token={token} />} />
-				<Route path="/register" element={<Register setToken={setToken} />} />
-				<Route path="/login" element={<Login setToken={setToken} />} />
-				<Route path="/account" element={<Account token={token} />} />
-			</Routes>
 		</>
 	);
 }
