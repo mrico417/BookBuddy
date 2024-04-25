@@ -38,7 +38,7 @@ export const Books = ({ token }) => {
 		<div className="cls-books-container">
 			<div className="cls-books-list">
 				{books.map((book) => {
-					return <BookCard key={book.id} book={book} />;
+					return <BookCard key={book.id} book={book} token={token} />;
 				})}
 			</div>
 		</div>
