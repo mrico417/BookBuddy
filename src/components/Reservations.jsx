@@ -26,13 +26,6 @@ export const Reservations = ({ token }) => {
 		getReservations();
 	}, []);
 
-	const handleDelete = (divIndex) => {
-		const updatedReservations = reservations.filter(
-			(reservation, i) => divIndex !== i
-		);
-		setReservations(updatedReservations);
-	};
-
 	return (
 		<div className="cls-reservations-container">
 			<h2>Reservations</h2>
