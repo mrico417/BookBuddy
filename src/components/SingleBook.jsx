@@ -7,6 +7,7 @@ import { BookCard } from "./BookCard";
 export const SingleBook = ({ token }) => {
 	const { bookId } = useParams();
 	const [book, setBook] = useState({});
+	const [fromSingleBook, setFromSingleBook] = useState(true);
 
 	// update the APIURL based on URL's bookId
 	const APIURL = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books/${bookId}`;
@@ -36,7 +37,7 @@ export const SingleBook = ({ token }) => {
 	return (
 		<div className="cls-single-book">
 			<h1>Single Book</h1>
-			{<BookCard book={book} />}
+			{<BookCard book={book} token={token} fromSingleBook={fromSingleBook} />}
 		</div>
 	);
 };
