@@ -4,7 +4,6 @@ import { ReservationCard } from "./ReservationCard";
 export const Reservations = ({ token }) => {
 	const APIURL = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/reservations`;
 	const [reservations, setReservations] = useState([]);
-	console.log(token);
 
 	const getReservations = async () => {
 		try {
@@ -16,7 +15,7 @@ export const Reservations = ({ token }) => {
 			});
 
 			const { reservation } = await response.json();
-			console.log(reservation);
+			//console.log(reservation);
 			setReservations(reservation);
 		} catch (err) {
 			console.log(err);
@@ -24,7 +23,9 @@ export const Reservations = ({ token }) => {
 	};
 
 	useEffect(() => {
-		getReservations();
+		if (token) {
+			getReservations();
+		}
 	}, []);
 
 	return (
@@ -43,10 +44,10 @@ export const Reservations = ({ token }) => {
 						/>
 					))}
 				</div>
-			) : reservations.length === 0 ? (
-				<h2>You have no Reservations. What are you waiting for...</h2>
-			) : (
+			) : !token ? (
 				<h1>Need to Login to see your Reservations !</h1>
+			) : (
+				<h2>You have no Reservations. What are you waiting for...</h2>
 			)}
 		</>
 	);
