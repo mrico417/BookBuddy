@@ -8,7 +8,10 @@ export const Navigations = ({ token }) => {
 			<Link to="/books">Books</Link>
 
 			{token ? (
-				<Link to="/account">Account</Link>
+				<>
+					<Link to="/reservations">Reservations</Link>
+					<Link to="/account">Account</Link>
+				</>
 			) : (
 				<>
 					<Link to="/register">Register</Link>

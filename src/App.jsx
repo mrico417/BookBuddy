@@ -7,6 +7,7 @@ import { Books } from "./components/Books";
 import { Login } from "./components/Login";
 import { SingleBook } from "./components/SingleBook";
 import { Account } from "./components/Account";
+import { Reservations } from "./components/Reservations";
 
 function App() {
 	const [token, setToken] = useState(null);
@@ -24,6 +25,10 @@ function App() {
 					<Route
 						path="/account"
 						element={<Account token={token} setToken={setToken} />}
+					/>
+					<Route
+						path="/reservations"
+						element={<Reservations token={token} />}
 					/>
 				</Routes>
 			</div>

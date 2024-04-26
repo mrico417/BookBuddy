@@ -17,7 +17,6 @@ export const Account = ({ token, setToken }) => {
 			{token ? (
 				<>
 					<button onClick={() => handleLogoff()}>Log Off</button>
-					<Reservations token={token}></Reservations>
 				</>
 			) : (
 				<></>
