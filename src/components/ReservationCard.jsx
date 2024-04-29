@@ -18,7 +18,7 @@ export const ReservationCard = ({
 			});
 
 			const result = await response.json();
-			console.log(result);
+			//console.log(result);
 
 			//remove the ReservationCard from the UI
 			const updatedReservations = reservations.filter(
@@ -26,7 +26,7 @@ export const ReservationCard = ({
 			);
 			setReservations(updatedReservations);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 
