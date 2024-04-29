@@ -49,10 +49,25 @@ export const Register = ({ setToken }) => {
 				onChange={handleChange}
 				id="register-form"
 			>
-				<input type="text" name="firstname" id="firstname" />
-				<input type="text" name="lastname" id="lastname" />
-				<input type="text" name="email" id="email" />
-				<input type="password" name="password" id="password" />
+				<input
+					type="text"
+					name="firstname"
+					id="firstname"
+					placeholder="firstname"
+				/>
+				<input
+					type="text"
+					name="lastname"
+					id="lastname"
+					placeholder="lastname"
+				/>
+				<input type="text" name="email" id="email" placeholder="email" />
+				<input
+					type="password"
+					name="password"
+					id="password"
+					placeholder="password"
+				/>
 				<button type="submit">Register</button>
 			</form>
 		</div>
