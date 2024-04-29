@@ -9,6 +9,9 @@ export const Books = ({ token }) => {
 	// useState to store books
 	const [books, setBooks] = useState([]);
 
+	// search option
+	const [filteredBooks, setFilteredBooks] = useState([]);
+
 	// get the books from API with useEffect
 	const getBooks = async () => {
 		try {
@@ -22,6 +25,7 @@ export const Books = ({ token }) => {
 
 			//console.log(result.books);
 			setBooks(result.books);
+			setFilteredBooks(result.books);
 		} catch (err) {
 			//console.log(err);
 		}
@@ -31,13 +35,31 @@ export const Books = ({ token }) => {
 		getBooks();
 	}, []);
 
+	const onSearchChange = (event) => {
+		const searchTerm = event.target.value.toLowerCase();
+		// console.log(event.target.value.toLowerCase());
+		const filteredBooks = books.filter((book) =>
+			book.title.toLowerCase().includes(searchTerm)
+		);
+		setFilteredBooks(filteredBooks);
+	};
+
 	// once display is a success, code the BookCard.jsx component
 	// then, use map to create BookCard component and send { book } as prop to display
 
 	return (
 		<div className="cls-books-container">
+			<div className="search-container">
+				<label htmlFor="searchInput">Search a Book:</label>
+				<input
+					type="text"
+					name="searchInput"
+					id="searchInput"
+					onChange={onSearchChange}
+				/>
+			</div>
 			<div className="cls-books-list">
-				{books.map((book) => {
+				{filteredBooks.map((book) => {
 					return <BookCard key={book.id} book={book} token={token} />;
 				})}
 			</div>
