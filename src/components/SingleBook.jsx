@@ -24,9 +24,9 @@ export const SingleBook = ({ token }) => {
 
 			const result = await response.json();
 			setBook(result.book);
-			console.log(result.book);
+			//console.log(result.book);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 

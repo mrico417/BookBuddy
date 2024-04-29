@@ -23,7 +23,7 @@ export const Books = ({ token }) => {
 			//console.log(result.books);
 			setBooks(result.books);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 

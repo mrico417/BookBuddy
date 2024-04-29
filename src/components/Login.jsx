@@ -25,16 +25,16 @@ export const Login = ({ setToken }) => {
 			});
 
 			const result = await response.json();
-			console.log(result.token);
+			//console.log(result.token);
 			setToken(result.token);
 			navigate("/");
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 
 	const handleLoginInputChange = (event) => {
-		console.log(event.target.name, event.target.value);
+		//console.log(event.target.name, event.target.value);
 
 		setLoginCredentials({
 			...loginCredentials,

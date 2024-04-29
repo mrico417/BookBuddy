@@ -4,7 +4,7 @@ export const BookCard = ({ book, token, fromSingleBook }) => {
 	const navigate = useNavigate();
 
 	const handleCheckout = async (isAvailable) => {
-		console.log(`handleCheckout`);
+		//console.log(`handleCheckout`);
 
 		try {
 			const response = await fetch(
@@ -22,9 +22,9 @@ export const BookCard = ({ book, token, fromSingleBook }) => {
 			);
 
 			const result = await response.json();
-			console.log(result);
+			//console.log(result);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 

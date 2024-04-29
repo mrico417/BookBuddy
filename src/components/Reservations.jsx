@@ -18,7 +18,7 @@ export const Reservations = ({ token }) => {
 			//console.log(reservation);
 			setReservations(reservation);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 

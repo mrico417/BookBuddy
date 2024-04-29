@@ -25,20 +25,20 @@ export const Register = ({ setToken }) => {
 			});
 
 			const result = await response.json();
-			console.log(result);
+			//console.log(result);
 			setToken(result.token);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 
 	const handleChange = (event) => {
-		console.log(event.target.name, event.target.value);
+		//console.log(event.target.name, event.target.value);
 		setNewRegistration({
 			...newRegistration,
 			[event.target.name]: event.target.value,
 		});
-		console.log(newRegistration);
+		//console.log(newRegistration);
 	};
 
 	return (

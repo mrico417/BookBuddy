@@ -16,7 +16,7 @@ export const UserCard = ({ token }) => {
 			const data = await response.json();
 			setMeUser(data);
 		} catch (err) {
-			console.log(err);
+			//console.log(err);
 		}
 	};
 
