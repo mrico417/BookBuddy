@@ -2,7 +2,6 @@
 
 import { useNavigate } from "react-router-dom";
 import { UserCard } from "./UserCard";
-import { useEffect, useState } from "react";
 
 const APIURL = `https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me`;
 
